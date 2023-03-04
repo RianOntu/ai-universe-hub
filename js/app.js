@@ -17,10 +17,13 @@ const displayCards=cards=>{
           <p class="card-text">2.Contextual understanding</p>
           <p class="card-text">3.Text generation</p>
         </div>
-        <div class="card-footer">
+        <div class="card-footer d-flex justify-content-between">
          <div><h3><b>${card.name}</b></h3>
-         <p><i class="fa-solid fa-calendar-days"></i>${card.published_in}</p>
+         <p><i class="fa-solid fa-calendar-days"></i><span>${card.published_in}</span></p>
 
+         </div>
+         <div>
+         <i class="fa-solid fa-arrow-right"></i>
          </div>
 
         </div>
