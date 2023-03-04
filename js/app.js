@@ -80,16 +80,16 @@ modalBody.innerHTML=`<div class="row">
  <h6><b>${data.data.description}</b></h6>
  <div class="d-flex">
      <div class="bg-white m-2">
-     <p>${data.data.pricing[0].price ?data.data.pricing[0].price:"Free of cost" }</p>
-     <p>${data.data.pricing[0].plan ? data.data.pricing[0].plan : "Free" }</p>
+     <p>${data.data.pricing!==null ? data.data.pricing[0].price:"Free of cost" }</p>
+     <p>${data.data.pricing!==null ? data.data.pricing[0].plan : "Free" }</p>
      </div>
      <div class="bg-white m-2">
-     <p>${data.data.pricing[1].price ?data.data.pricing[1].price:"Free of cost" }</p>
-     <p>${data.data.pricing[1].plan ? data.data.pricing[1].plan : "Free" }</p>
+     <p>${data.data.pricing!==null ?data.data.pricing[1].price:"Free of cost" }</p>
+     <p>${data.data.pricing!==null ? data.data.pricing[1].plan : "Free" }</p>
      </div>
      <div class="bg-white m-2">
-     <p>${data.data.pricing[2].price ?data.data.pricing[2].price:"Free of cost" }</p>
-     <p>${data.data.pricing[2].plan ? data.data.pricing[2].plan : "Free" }</p>
+     <p>${data.data.pricing!==null ?data.data.pricing[2].price:"Free of cost" }</p>
+     <p>${data.data.pricing!==null ? data.data.pricing[2].plan : "Free" }</p>
      </div>
  </div>
  <div class="d-flex">
@@ -102,9 +102,9 @@ modalBody.innerHTML=`<div class="row">
     </div>
     <div class="m-2">
         <h3>Integrations</h3>
-        <p>${data.data.integrations[0] ? data.data.integrations[0]:"No data found"}</p>
-        <p>${data.data.integrations[1] ? data.data.integrations[1]:"No data found"}</p>
-        <p>${data.data.integrations[2] ? data.data.integrations[2]:"No data found"}</p>
+        <p>${data.data.integrations!==null ? data.data.integrations[0]:"No data found"}</p>
+        <p>${data.data.integrations!==null ? data.data.integrations[1]:"No data found"}</p>
+        <p>${data.data.integrations!==null ? data.data.integrations[2]:"No data found"}</p>
     </div>
  </div>
 
