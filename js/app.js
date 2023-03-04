@@ -113,6 +113,7 @@ modalBody.innerHTML=`<div class="row">
     <img class="img-fluid" src="${data.data.image_link[0]?data.data.image_link[0]:''}" alt="">
     <h3>${data.data.input_output_examples!==null?data.data.input_output_examples[0].input:"No question found" }</h3>
     <p>${data.data.input_output_examples!==null?data.data.input_output_examples[0].output:"No not yet.take a break!" }</p>
+    
 </div>
 </div>`
 }
