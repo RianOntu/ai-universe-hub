@@ -15,7 +15,7 @@ const loadCards=(dataLimit)=>{
     .then(data=>displayCards(data.data.tools,dataLimit))
 }
 const displayCards=(cards,dataLimit)=>{
-    console.log(cards);
+    
     toggleSpinner(true);
     const mainContainer=document.getElementById('main-container');
     mainContainer.innerText='';
@@ -73,6 +73,47 @@ fetch(`https://openapi.programming-hero.com/api/ai/tool/${id}`)
 .then(data=>displayCardDetails(data))
 }
 const displayCardDetails=data=>{
-console.log(data);
+console.log(data.data);
+const modalBody=document.getElementById('modal-body');
+modalBody.innerHTML=`<div class="row">
+<div class="col-md-6 col-12 border">
+ <h6><b>${data.data.description}</b></h6>
+ <div class="d-flex">
+     <div class="bg-white m-2">
+     <p>${data.data.pricing[0].price ?data.data.pricing[0].price:"Free of cost" }</p>
+     <p>${data.data.pricing[0].plan ? data.data.pricing[0].plan : "Free" }</p>
+     </div>
+     <div class="bg-white m-2">
+     <p>${data.data.pricing[1].price ?data.data.pricing[1].price:"Free of cost" }</p>
+     <p>${data.data.pricing[1].plan ? data.data.pricing[1].plan : "Free" }</p>
+     </div>
+     <div class="bg-white m-2">
+     <p>${data.data.pricing[2].price ?data.data.pricing[2].price:"Free of cost" }</p>
+     <p>${data.data.pricing[2].plan ? data.data.pricing[2].plan : "Free" }</p>
+     </div>
+ </div>
+ <div class="d-flex">
+    <div class="m-2">
+        <h3>Features</h3>
+        <p>${data.data.features[1].feature_name}</p>
+        <p>${data.data.features[2].feature_name}</p>
+        <p>${data.data.features[3].feature_name}</p>
+       
+    </div>
+    <div class="m-2">
+        <h3>Integrations</h3>
+        <p>${data.data.integrations[0] ? data.data.integrations[0]:"No data found"}</p>
+        <p>${data.data.integrations[1] ? data.data.integrations[1]:"No data found"}</p>
+        <p>${data.data.integrations[2] ? data.data.integrations[2]:"No data found"}</p>
+    </div>
+ </div>
+
+</div>
+<div class="col-md-6 col-12 border">
+    <img class="img-fluid" src="${data.data.image_link[0]?data.data.image_link[0]:''}" alt="">
+    <h3>Hi hi hi</h3>
+    <p>Hi hi hi</p>
+</div>
+</div>`
 }
 
